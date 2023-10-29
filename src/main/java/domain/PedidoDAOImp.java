@@ -1,6 +1,7 @@
 package domain;
 
 import clase.Pedido;
+import clase.Sesion;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,6 +33,7 @@ public class PedidoDAOImp implements PedidoDAO{
                 pedido.setFecha(String.valueOf(resultSet.getDate("fecha")));
                 pedido.setUsuarioId(resultSet.getInt("usuario"));
                 pedido.setTotal(resultSet.getInt("total"));
+                Sesion.setPedido(pedido);
                 salida.add(pedido);
             }
         } catch (SQLException e) {

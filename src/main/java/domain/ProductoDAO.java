@@ -1,5 +1,7 @@
 package domain;
 
-public interface ProductoDAO {
+import clase.Producto;
 
+public interface ProductoDAO {
+public Producto loadProduct(Integer id);
 }

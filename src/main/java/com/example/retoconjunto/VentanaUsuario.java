@@ -8,6 +8,7 @@ import domain.PedidoDAOImp;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
@@ -73,6 +74,18 @@ public class VentanaUsuario implements Initializable {
         Sesion.setPedidos(dao.loadAll(Sesion.getUsuario().getId()));
         observablePedidos.addAll(Sesion.getPedidos());
         tvPedidos.setItems(observablePedidos);
-       
+
+    }
+
+    @javafx.fxml.FXML
+    public void mostrarItemsPedido(Event event) {
+        seleccionarPedido(Sesion.getPedidoActual());
+    }
+
+    private void seleccionarPedido(Pedido p){
+        Sesion.setPedidoActual(p);
+        Sesion.setPos(tvPedidos.getSelectionModel().getSelectedIndex());
+        HelloApplication.loadFXMLDetalles("ventanaDetallesPedido.fxml");
+
     }
 }

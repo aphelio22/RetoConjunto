@@ -13,6 +13,9 @@ public class Item {
         this.producto = producto;
     }
 
+    public Item(){
+    }
+
     public Integer getId() {
         return id;
     }
@@ -43,5 +46,15 @@ public class Item {
 
     public void setProducto(Producto producto) {
         this.producto = producto;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", codigo_pedido='" + codigo_pedido + '\'' +
+                ", cantidad=" + cantidad +
+                ", producto=" + producto +
+                '}';
     }
 }

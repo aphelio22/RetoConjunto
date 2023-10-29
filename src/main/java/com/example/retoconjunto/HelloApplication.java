@@ -30,6 +30,15 @@ public class HelloApplication extends Application {
         }
     }
 
+    public static void loadFXMLDetalles(String ruta){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(ruta));
+            Scene scene = new Scene(fxmlLoader.load(), 850, 400);
+            myStage.setScene(scene);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public static void main(String[] args) {
         launch();
     }

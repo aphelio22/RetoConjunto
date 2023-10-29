@@ -15,6 +15,10 @@ public class Producto {
         this.cantidad_disponible = cantidad_disponible;
     }
 
+    public Producto(){
+
+    }
+
     public Integer getId() {
         return id;
     }
@@ -45,5 +49,11 @@ public class Producto {
 
     public void setCantidad_disponible(Integer cantidad_disponible) {
         this.cantidad_disponible = cantidad_disponible;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + " / " + precio + "€"
+                ;
     }
 }
