@@ -1,20 +1,21 @@
 package clase;
 
-import java.util.Date;
-
 public class Pedido {
     private Integer id;
     private String codigo_pedido;
-    private Date fecha;
-    private Usuario usuario;
+    private String fecha;
+    private Integer usuarioId;
     private Integer total;
 
-    public Pedido(Integer id, String codigo_pedido, Date fecha, Usuario usuario, Integer total) {
+    public Pedido(Integer id, String codigo_pedido, String fecha, Integer usuarioId, Integer total) {
         this.id = id;
         this.codigo_pedido = codigo_pedido;
         this.fecha = fecha;
-        this.usuario = usuario;
+        this.usuarioId = usuarioId;
         this.total = total;
+    }
+
+    public Pedido() {
     }
 
     public Integer getId() {
@@ -33,20 +34,20 @@ public class Pedido {
         this.codigo_pedido = codigo_pedido;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Integer getUsuarioId() {
+        return usuarioId;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuarioId(Integer usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
     public Integer getTotal() {

@@ -14,7 +14,6 @@ public class Usuario {
     private ArrayList<Pedido> pedido;
 
     public Usuario(Integer id, String nombre, String contrasenha, String email) {
-        this.pedido = null;
         this.id = id;
         this.nombre = nombre;
         this.contrasenha = contrasenha;
@@ -55,5 +54,16 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", contrasenha='" + contrasenha + '\'' +
+                ", email='" + email + '\'' +
+                ", pedido=" + pedido +
+                '}';
     }
 }

@@ -20,20 +20,21 @@ public class UsuarioDAOImp implements UsuarioDAO {
 
     @Override
     public Usuario loadUser(String email, String contrasenha) throws UsuarioInexistente {
-        Usuario usuario = null;
-        try{
+        Usuario usuario;
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement(loadUser);
             preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            if (resultSet.next()){
+            if (resultSet.next()) {
                 usuario = new Usuario(email, contrasenha);
+                usuario.setId(resultSet.getInt("id"));
+                usuario.setNombre(resultSet.getString("nombre"));
                 usuario.setEmail(resultSet.getString("email"));
                 usuario.setContrasenha(resultSet.getString("contrasenha"));
-                if (!contrasenha.equals(usuario.getContrasenha())){
+                if (!contrasenha.equals(usuario.getContrasenha())) {
                     throw new ContrasenhaIncorrecta("Contraseña incorrecta");
                 }
-                usuario.setNombre(resultSet.getString("nombre"));
             } else {
                 throw new UsuarioInexistente("El usuario no existe");
             }
@@ -42,6 +43,8 @@ public class UsuarioDAOImp implements UsuarioDAO {
         } catch (ContrasenhaIncorrecta e) {
             throw new RuntimeException(e);
         }
+        System.out.println(usuario);
         return usuario;
+
     }
 }
