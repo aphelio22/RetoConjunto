@@ -23,7 +23,7 @@ public class HelloApplication extends Application {
     public static void loadFXML(String ruta){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(ruta));
-            Scene scene = new Scene(fxmlLoader.load(), 850, 400);
+            Scene scene = new Scene(fxmlLoader.load(), 858, 625);
             myStage.setScene(scene);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -33,7 +33,7 @@ public class HelloApplication extends Application {
     public static void loadFXMLDetalles(String ruta){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(ruta));
-            Scene scene = new Scene(fxmlLoader.load(), 850, 400);
+            Scene scene = new Scene(fxmlLoader.load(), 600, 427);
             myStage.setScene(scene);
         } catch (IOException e) {
             throw new RuntimeException(e);

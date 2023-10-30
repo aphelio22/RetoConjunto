@@ -24,8 +24,10 @@ public class PedidoDAOImp implements PedidoDAO{
         ArrayList<Pedido> salida = new ArrayList<>();
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(queryLoadAll);
+            ItemDAOImp itemDAOImp = new ItemDAOImp(DBConnection.getConnection());
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
+
             while(resultSet.next()){
                 Pedido pedido = new Pedido();
                 pedido.setId(resultSet.getInt("id"));
@@ -33,6 +35,7 @@ public class PedidoDAOImp implements PedidoDAO{
                 pedido.setFecha(String.valueOf(resultSet.getDate("fecha")));
                 pedido.setUsuarioId(resultSet.getInt("usuario"));
                 pedido.setTotal(resultSet.getInt("total"));
+                pedido.getItems().addAll(itemDAOImp.loadAll(pedido.getCodigo_pedido()));
                 Sesion.setPedido(pedido);
                 salida.add(pedido);
             }

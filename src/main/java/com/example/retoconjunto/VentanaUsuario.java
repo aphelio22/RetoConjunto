@@ -68,6 +68,7 @@ public class VentanaUsuario implements Initializable {
             return new SimpleStringProperty(total);
         });
 
+        lbUsuario.setText("Bienvenido: " + Sesion.getUsuario().getNombre());
 
         observablePedidos = FXCollections.observableArrayList();
         PedidoDAOImp dao = new PedidoDAOImp(DBConnection.getConnection());

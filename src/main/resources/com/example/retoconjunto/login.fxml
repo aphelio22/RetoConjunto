@@ -5,55 +5,64 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retoconjunto.Login">
+<BorderPane id="contenedor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retoconjunto.Login">
    <center>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="546.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="113.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="173.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../image/userIcon.png" />
+                  <Image url="@../../../image/gatitoAmazonasFelizLogin.png" />
                </image>
                <VBox.margin>
-                  <Insets bottom="20.0" />
+                  <Insets />
                </VBox.margin>
             </ImageView>
-            <Label text="Usuario:">
+            <Label id="loginUser" text="Usuario:">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
                <font>
                   <Font size="18.0" />
                </font>
+               <effect>
+                  <Glow />
+               </effect>
             </Label>
             <TextField fx:id="userField">
                <VBox.margin>
-                  <Insets bottom="20.0" left="150.0" right="150.0" />
+                  <Insets bottom="30.0" left="175.0" right="175.0" />
                </VBox.margin>
             </TextField>
-            <Label text="Contraseña:">
+            <Label id="loginPassword" text="Contraseña:">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
                <font>
                   <Font size="18.0" />
                </font>
+               <effect>
+                  <Glow />
+               </effect>
             </Label>
             <PasswordField fx:id="passField">
                <VBox.margin>
-                  <Insets bottom="30.0" left="150.0" right="150.0" />
+                  <Insets bottom="50.0" left="175.0" right="175.0" />
                </VBox.margin>
             </PasswordField>
             <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="121.0" text="Iniciar Sesión">
                <font>
                   <Font size="16.0" />
                </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
             </Button>
          </children>
       </VBox>
