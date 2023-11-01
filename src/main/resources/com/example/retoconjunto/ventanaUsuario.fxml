@@ -63,7 +63,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="tvPedidos" onMouseClicked="#mostrarItemsPedido" prefHeight="465.0" prefWidth="810.0" stylesheets="@style.css">
+                  <TableView fx:id="tvPedidos" prefHeight="465.0" prefWidth="810.0" stylesheets="@style.css">
                     <columns>
                         <TableColumn fx:id="cIdPedido" prefWidth="75.0" text="ID" />
                       <TableColumn fx:id="cCPedido" prefWidth="75.0" text="Código de pedido" />
