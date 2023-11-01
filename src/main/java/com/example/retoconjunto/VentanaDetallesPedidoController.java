@@ -17,7 +17,7 @@ import javafx.scene.control.TableView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class VentanaDetallesPedido implements Initializable {
+public class VentanaDetallesPedidoController implements Initializable {
     @javafx.fxml.FXML
     private TableColumn<Item, String> cIdItem;
     @javafx.fxml.FXML

@@ -2,7 +2,6 @@ package com.example.retoconjunto;
 
 import clase.Pedido;
 import clase.Sesion;
-import clase.Usuario;
 import domain.DBConnection;
 import domain.PedidoDAOImp;
 import javafx.beans.property.SimpleStringProperty;
@@ -14,10 +13,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
-public class VentanaUsuario implements Initializable {
+public class VentanaUsuarioController implements Initializable {
     @javafx.fxml.FXML
     private Label lbUsuario;
     @javafx.fxml.FXML

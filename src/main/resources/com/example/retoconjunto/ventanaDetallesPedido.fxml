@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retoconjunto.VentanaDetallesPedido">
+<VBox stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retoconjunto.VentanaDetallesPedidoController">
    <children>
       <MenuBar id="menuBarDetalles">
         <menus>
