@@ -93,6 +93,10 @@
         -fx-background-color: linear-gradient(to bottom, #ffffff, #ff9300); /* Cambia los colores como desees */
     }
 
+    #contenedorLogin {
+        -fx-background-color: linear-gradient(to bottom, #ffffff, #ffbe49);
+    }
+
     #menuBar{
         -fx-background-color: linear-gradient(to top, #fffaf4, #ffffff);
     }
@@ -130,4 +134,12 @@
         -fx-font-size: 20px;
         -fx-text-fill: #ffffff;
     }
+
+    .button {
+        -fx-background-color: #ffffff;
+        -fx-text-fill: #ff9300;
+        -fx-font: 13px "Roboto";
+        -fx-font-weight: bold;
+    }
+
 

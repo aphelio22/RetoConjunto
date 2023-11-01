@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    public static void loadFXML(String ruta){
+    public static void loadFXMLUsuario(String ruta){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(ruta));
             Scene scene = new Scene(fxmlLoader.load(), 858, 625);
@@ -32,6 +32,16 @@ public class HelloApplication extends Application {
 
     public static void loadFXMLDetalles(String ruta){
         try{
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(ruta));
+            Scene scene = new Scene(fxmlLoader.load(), 600, 427);
+            myStage.setScene(scene);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void loadFXMLLogin(String ruta){
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(ruta));
             Scene scene = new Scene(fxmlLoader.load(), 600, 427);
             myStage.setScene(scene);

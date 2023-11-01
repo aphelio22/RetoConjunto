@@ -8,20 +8,16 @@ import domain.PedidoDAOImp;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 public class VentanaUsuario implements Initializable {
-    @javafx.fxml.FXML
-    private MenuItem itemLogOut;
     @javafx.fxml.FXML
     private Label lbUsuario;
     @javafx.fxml.FXML
@@ -37,8 +33,10 @@ public class VentanaUsuario implements Initializable {
     @javafx.fxml.FXML
     private TableColumn<Pedido, String> cIdPedido;
     private ObservableList<Pedido> observablePedidos;
-
-
+    @javafx.fxml.FXML
+    private MenuItem btnLogOut;
+    @javafx.fxml.FXML
+    private MenuItem btnAcercaDe;
 
 
     @Override
@@ -88,5 +86,19 @@ public class VentanaUsuario implements Initializable {
         Sesion.setPos(tvPedidos.getSelectionModel().getSelectedIndex());
         HelloApplication.loadFXMLDetalles("ventanaDetallesPedido.fxml");
 
+    }
+
+    @javafx.fxml.FXML
+    public void mostrarAcercaDe(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Acerca de: ");
+        alert.setHeaderText("Creado por: ");
+        alert.setContentText("Jorge Alarcón Navarro, 2ºDAM");
+        alert.showAndWait();
+    }
+
+    @javafx.fxml.FXML
+    public void logOut(ActionEvent actionEvent) {
+        HelloApplication.loadFXMLLogin("login.fxml");
     }
 }

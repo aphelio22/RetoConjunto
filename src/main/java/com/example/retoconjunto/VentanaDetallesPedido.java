@@ -7,7 +7,10 @@ import domain.ItemDAOImp;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -26,6 +29,12 @@ public class VentanaDetallesPedido implements Initializable {
     private ObservableList<Item> observableListItem;
     @javafx.fxml.FXML
     private TableView tvPedido;
+    @javafx.fxml.FXML
+    private MenuItem menuVolver;
+    @javafx.fxml.FXML
+    private MenuItem menuAcercaDe;
+    @javafx.fxml.FXML
+    private MenuItem btnLogOut;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -55,5 +64,25 @@ public class VentanaDetallesPedido implements Initializable {
         observableListItem.addAll(Sesion.getItems());
         System.out.println(observableListItem);
         tvPedido.setItems(observableListItem);
+    }
+
+    @javafx.fxml.FXML
+    public void volverAtrás(ActionEvent actionEvent) {
+        HelloApplication.loadFXMLUsuario("ventanaUsuario.fxml");
+    }
+
+    @javafx.fxml.FXML
+    public void mostrarAcercaDe(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Acerca de: ");
+        alert.setHeaderText("Creado por: ");
+        alert.setContentText("Jorge Alarcón Navarro, 2ºDAM");
+        alert.showAndWait();
+    }
+
+
+    @javafx.fxml.FXML
+    public void logOut(ActionEvent actionEvent) {
+        HelloApplication.loadFXMLLogin("login.fxml");
     }
 }

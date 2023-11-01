@@ -19,11 +19,11 @@
         <menus>
           <Menu id="menuText" mnemonicParsing="false" text="Opciones">
             <items>
-              <MenuItem id="menuItem" mnemonicParsing="false" text="Log Out" />
+              <MenuItem id="menuItem" fx:id="btnLogOut" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem id="menuItem" mnemonicParsing="false" text="Acerca de" />
+                  <MenuItem id="menuItem" fx:id="menuAcercaDe" mnemonicParsing="false" onAction="#mostrarAcercaDe" text="Acerca de" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem id="menuItem" mnemonicParsing="false" text="Volver" />
+                  <MenuItem id="menuItem" fx:id="menuVolver" mnemonicParsing="false" onAction="#volverAtrás" text="Volver" />
             </items>
           </Menu>
         </menus>

@@ -37,7 +37,7 @@ public class Login implements Initializable {
             alert.setHeaderText("Bienvenido " + usuario.getNombre());
             alert.setContentText("Inicio correcto");
             alert.showAndWait();
-            HelloApplication.loadFXML("ventanaUsuario.fxml");
+            HelloApplication.loadFXMLUsuario("ventanaUsuario.fxml");
         } catch (UsuarioInexistente e) {
             throw new RuntimeException(e);
         }
