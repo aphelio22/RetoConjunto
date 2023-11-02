@@ -25,7 +25,7 @@
                         <Image url="@../../../image/gatitoAmazonasFelizLogin.png" />
                      </image>
                   </ImageView>
-                  <Label id="labelBienvenida" alignment="CENTER" text="Bienvenido a Miauzon" />
+                  <Label id="labelBienvenida" alignment="CENTER" text="Bienvenid@ a Miauzon" />
                </children>
             </HBox>
             <Label id="loginUser" text="Usuario:">

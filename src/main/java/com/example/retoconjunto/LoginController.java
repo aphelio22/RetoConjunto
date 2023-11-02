@@ -34,6 +34,8 @@ public class LoginController implements Initializable {
      */
     @FXML
     private PasswordField passField;
+    @FXML
+    private Button btnLogin;
 
     /**
      * Maneja el evento de inicio de sesión cuando se presiona el botón de inicio de sesión.
@@ -53,7 +55,7 @@ public class LoginController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("¡Hola!");
             alert.setHeaderText("Inicio correcto");
-            alert.setContentText("Bienvenido, " + usuario.getNombre() + ".");
+            alert.setContentText("Bienvenid@, " + usuario.getNombre() + ".");
             alert.showAndWait();
 
             // Carga la ventana de usuario después de un inicio de sesión exitoso.

@@ -132,6 +132,8 @@ public class VentanaDetallesPedidoController implements Initializable {
      */
     @Deprecated
     public void logOut(ActionEvent actionEvent) {
+        //Quita de la sesión al usuario actual.
+        Sesion.setUsuario(null);
         // Maneja el evento de cierre de sesión y carga la ventana de login.
         HelloApplication.loadFXMLLogin("login.fxml");
     }

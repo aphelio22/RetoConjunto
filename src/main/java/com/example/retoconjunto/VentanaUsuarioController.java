@@ -102,7 +102,7 @@ public class VentanaUsuarioController implements Initializable {
         });
 
         //Texto de bienvenida de la ventada en la que se muestran los pedidos de cada usuario.
-        lbUsuario.setText("Bienvenido: " + Sesion.getUsuario().getNombre());
+        lbUsuario.setText("Bienvenid@: " + Sesion.getUsuario().getNombre());
 
         //Se crea el observable y se llena la tabla con cada pedido.
         observablePedidos = FXCollections.observableArrayList();
@@ -152,6 +152,8 @@ public class VentanaUsuarioController implements Initializable {
      */
     @Deprecated
     public void logOut(ActionEvent actionEvent) {
+        //Quita de la sesión al usuario actual.
+        Sesion.setUsuario(null);
         // Maneja el evento de cierre de sesión y carga la ventana de inicio de sesión.
         HelloApplication.loadFXMLLogin("login.fxml");
     }
