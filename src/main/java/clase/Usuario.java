@@ -10,22 +10,27 @@ import java.util.ArrayList;
  * y una lista de pedidos relacionados con el mismo.
  */
 public class Usuario {
+
     /**
      * ID del usuario.
      */
     private Integer id;
+
     /**
      * Nombre del usuario.
      */
     private String nombre;
+
     /**
      * Contraseña del usuario.
      */
     private String contrasenha;
+
     /**
      * Dirección de correo electrónico del usuario.
      */
     private String email;
+
     /**
      * Lista de pedidos asociados al usuario.
      */

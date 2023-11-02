@@ -18,11 +18,11 @@
         <menus>
           <Menu id="menuText" mnemonicParsing="false" text="Opciones">
             <items>
-              <MenuItem id="menuItem" fx:id="btnLogOut" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+              <MenuItem id="menuItem" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem id="menuItem" fx:id="menuAcercaDe" mnemonicParsing="false" onAction="#mostrarAcercaDe" text="Acerca de" />
+                  <MenuItem id="menuItem" mnemonicParsing="false" onAction="#mostrarAcercaDe" text="Acerca de" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem id="menuItem" fx:id="menuVolver" mnemonicParsing="false" onAction="#volverAtrás" text="Volver" />
+                  <MenuItem id="menuItem" mnemonicParsing="false" onAction="#volverAtrás" text="Volver" />
             </items>
           </Menu>
         </menus>
@@ -42,7 +42,7 @@
             </Label>
          </top>
          <center>
-            <TableView fx:id="tvPedido" prefHeight="350.0" prefWidth="557.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="tvItem" prefHeight="350.0" prefWidth="557.0" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="cIdItem" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="cCPedido" prefWidth="75.0" text="Código de pedido" />

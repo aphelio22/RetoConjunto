@@ -4,18 +4,22 @@ package clase;
  * La clase Item representa un elemento de un pedido que incluye información sobre el producto y la cantidad solicitada.
  */
 public class Item {
+
     /**
      * Identificador único del ítem.
      */
     private Integer id;
+
     /**
      * Código del pedido al que pertenece el ítem.
      */
     private String codigo_pedido;
+
     /**
      * Cantidad del producto en el ítem.
      */
     private Integer cantidad;
+
     /**
      * Producto asociado al ítem.
      */

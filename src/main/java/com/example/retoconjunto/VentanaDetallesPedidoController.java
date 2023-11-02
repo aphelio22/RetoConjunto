@@ -10,7 +10,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -21,36 +20,43 @@ import java.util.ResourceBundle;
  * La clase VentanaDetallesPedidoController controla la lógica de la ventana de detalles del pedido.
  */
 public class VentanaDetallesPedidoController implements Initializable {
+
     /**
      * TableColumn que representa a la columna 'id' de cada item.
      */
     @javafx.fxml.FXML
     private TableColumn<Item, String> cIdItem;
+
     /**
      * TableColumn que representa a la columna 'codigo_pedido' de cada item.
      */
     @javafx.fxml.FXML
     private TableColumn<Item, String> cCPedido;
+
     /**
      * TableColumn que representa a la columna 'cantidad' de cada item.
      */
     @javafx.fxml.FXML
     private TableColumn<Item, String> cCantidad;
+
     /**
      * TableColumn que representa a la columna donde se mostrarán los detalles
      * de cada producto que conforma cada item.
      */
     @javafx.fxml.FXML
     private TableColumn<Item, String> cProducto;
+
     /**
-     * Tabla de Items.
+     * TableView que muestra todos los items del pedido con su información correspondiente.
      */
     @javafx.fxml.FXML
-    private TableView tvPedido;
+    private TableView tvItem;
+
     /**
      * Observable en el que se almacenará cada item con todos sus datos.
      */
     private ObservableList<Item> observableListItem;
+
 
     /**
      * Inicializa la clase y mappea las columnas de la tabla.
@@ -87,8 +93,7 @@ public class VentanaDetallesPedidoController implements Initializable {
         ItemDAOImp dao = new ItemDAOImp(DBConnection.getConnection());
         Sesion.setItems(dao.loadAll(Sesion.getPedido().getCodigo_pedido()));
         observableListItem.addAll(Sesion.getItems());
-        System.out.println(observableListItem);
-        tvPedido.setItems(observableListItem);
+        tvItem.setItems(observableListItem);
     }
 
     /**
@@ -97,7 +102,7 @@ public class VentanaDetallesPedidoController implements Initializable {
      *
      * @param actionEvent El evento de acción generado por el botón.
      */
-    @javafx.fxml.FXML
+    @Deprecated
     public void volverAtrás(ActionEvent actionEvent) {
         // Maneja el evento de 'Volver' y carga la ventana de usuario.
         HelloApplication.loadFXMLUsuario("ventanaUsuario.fxml");
@@ -109,7 +114,7 @@ public class VentanaDetallesPedidoController implements Initializable {
      *
      * @param actionEvent El evento de acción generado por el botón.
      */
-    @javafx.fxml.FXML
+    @Deprecated
     public void mostrarAcercaDe(ActionEvent actionEvent) {
         // Muestra información "Acerca de" en una ventana de diálogo.
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -125,7 +130,7 @@ public class VentanaDetallesPedidoController implements Initializable {
      *
      * @param actionEvent El evento de acción generado por el botón.
      */
-    @javafx.fxml.FXML
+    @Deprecated
     public void logOut(ActionEvent actionEvent) {
         // Maneja el evento de cierre de sesión y carga la ventana de login.
         HelloApplication.loadFXMLLogin("login.fxml");

@@ -8,7 +8,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
@@ -19,42 +18,50 @@ import java.util.ResourceBundle;
  * La clase VentanaUsuarioController controla la lógica de la ventana de usuario.
  */
 public class VentanaUsuarioController implements Initializable {
+
     /**
      * Label que completa al mensaje de 'Bienvenido...' en la pantalla de los
      * pedidos del usuario.
      */
     @javafx.fxml.FXML
     private Label lbUsuario;
+
     /**
      * TableColumn que representa a la columna 'id' de cada pedido.
      */
     @javafx.fxml.FXML
     private TableColumn<Pedido, String> cIdPedido;
+
     /**
      * TableColumn que representa a la columna 'codigo_pedido' de cada pedido.
      */
     @javafx.fxml.FXML
     private TableColumn<Pedido, String> cCPedido;
+
     /**
      * TableColumn que representa a la columna 'fecha' de cada pedido.
      */
     @javafx.fxml.FXML
     private TableColumn<Pedido, String> cFecha;
+
     /**
      * TableColumn que representa a la columna 'usuario' de cada pedido.
      */
     @javafx.fxml.FXML
     private TableColumn<Pedido, String> cUsuario;
+
     /**
      * TableColumn que representa a la columna 'total' de cada pedido.
      */
     @javafx.fxml.FXML
     private TableColumn<Pedido, String> cTotal;
+
     /**
      * TableView que muestra todos los pedidos del usuario con su información correspondiente.
      */
     @javafx.fxml.FXML
-    private TableView tvPedidos;
+    private TableView<Pedido> tvPedidos;
+
     /**
      * Observable en el que se almacenará cada pedido con todos sus datos.
      */
@@ -105,8 +112,8 @@ public class VentanaUsuarioController implements Initializable {
         tvPedidos.setItems(observablePedidos);
 
         //Al seleccionar un pedido en la tabla se llamará al método 'seleccionarPedido()'.
-        tvPedidos.getSelectionModel().selectedItemProperty().addListener((observableValue, o, t1) -> {
-            seleccionarPedido((Pedido) tvPedidos.getSelectionModel().getSelectedItem());
+        tvPedidos.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            seleccionarPedido(tvPedidos.getSelectionModel().getSelectedItem());
         });
     }
 
@@ -116,7 +123,7 @@ public class VentanaUsuarioController implements Initializable {
      * @param p El pedido seleccionado.
      */
     private void seleccionarPedido(Pedido p) {
-        Sesion.setPedidoActual(p);
+        Sesion.setPedido(p);
         Sesion.setPos(tvPedidos.getSelectionModel().getSelectedIndex());
         HelloApplication.loadFXMLDetalles("ventanaDetallesPedido.fxml");
     }
@@ -127,7 +134,7 @@ public class VentanaUsuarioController implements Initializable {
      *
      * @param actionEvent El evento de acción generado por el botón.
      */
-    @javafx.fxml.FXML
+    @Deprecated
     public void mostrarAcercaDe(ActionEvent actionEvent) {
         // Muestra información "Acerca de" en una ventana de diálogo.
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -143,7 +150,7 @@ public class VentanaUsuarioController implements Initializable {
      *
      * @param actionEvent El evento de acción generado por el botón.
      */
-    @javafx.fxml.FXML
+    @Deprecated
     public void logOut(ActionEvent actionEvent) {
         // Maneja el evento de cierre de sesión y carga la ventana de inicio de sesión.
         HelloApplication.loadFXMLLogin("login.fxml");

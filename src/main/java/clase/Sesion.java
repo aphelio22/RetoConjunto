@@ -7,52 +7,36 @@ import java.util.ArrayList;
  * del pedido seleccionado en la tabla, el usuario, el listado de pedidos, los productos y los items.
  */
 public class Sesion {
-    /**
-     * Pedido actual en la sesión.
-     */
-    private static Pedido pedidoActual = null;
+
     /**
      * Posición del pedido seleccionado en la tabla.
      */
     private static Integer pos = null;
+
     /**
      * Usuario actual en la sesión.
      */
     private static Usuario usuario;
+
     /**
      * Pedido en la sesión.
      */
     private static Pedido pedido;
+
     /**
      * Lista de pedidos en la sesión.
      */
     private static ArrayList<Pedido> pedidos = new ArrayList<>();
+
     /**
      * Lista de productos en la sesión.
      */
     private static ArrayList<Producto> productos = new ArrayList<>();
+
     /**
      * Lista de items en la sesión.
      */
     private static ArrayList<Item> items = new ArrayList<>();
-
-    /**
-     * Obtiene el pedido actual en la sesión.
-     *
-     * @return El pedido actual en la sesión.
-     */
-    public static Pedido getPedidoActual() {
-        return pedidoActual;
-    }
-
-    /**
-     * Establece el pedido actual en la sesión.
-     *
-     * @param pedidoActual El pedido actual en la sesión.
-     */
-    public static void setPedidoActual(Pedido pedidoActual) {
-        Sesion.pedidoActual = pedidoActual;
-    }
 
     /**
      * Obtiene la posición del pedido seleccionado en la tabla.

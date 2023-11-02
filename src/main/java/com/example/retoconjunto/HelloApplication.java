@@ -26,7 +26,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setResizable(false);
-        stage.setTitle("Hello!");
+        stage.setTitle("Gestor de pedidos: Miauzon");
         stage.setScene(scene);
         stage.show();
     }

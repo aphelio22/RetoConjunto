@@ -14,10 +14,12 @@ import java.util.ArrayList;
  * relacionados con sus respectivos pedidos desde una base de datos.
  */
 public class ItemDAOImp implements ItemDAO {
+
     /**
      * Atributo con el que se establecerá la conexión a la base de datos.
      */
     private static Connection connection;
+
     /**
      *  Consulta SQL para cargar todos los elementos (items) relacionados con un pedido específico.
      */

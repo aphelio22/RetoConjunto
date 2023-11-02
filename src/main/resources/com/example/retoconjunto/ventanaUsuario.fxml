@@ -21,9 +21,9 @@
         <menus>
           <Menu id="menuText" mnemonicParsing="false" styleClass=".label" text="Opciones">
             <items>
-              <MenuItem id="menuItem" fx:id="btnLogOut" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+              <MenuItem id="menuItem" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem id="menuItem" fx:id="btnAcercaDe" mnemonicParsing="false" onAction="#mostrarAcercaDe" text="Acerca de" />
+                  <MenuItem id="menuItem" mnemonicParsing="false" onAction="#mostrarAcercaDe" text="Acerca de" />
             </items>
           </Menu>
         </menus>
@@ -48,7 +48,7 @@
                         <Image url="@../../../image/gatitoAmazonasFeliz.png" />
                      </image>
                   </ImageView>
-                  <Label id="labelNombreTienda" text="MiauZon" />
+                  <Label id="labelNombreTienda" text="Miauzon" />
                </children>
             </HBox>
          </top>

@@ -7,26 +7,32 @@ import java.util.ArrayList;
  * los productos solicitados, el usuario que realizó el pedido y otros detalles.
  */
 public class Pedido {
+
     /**
      * Identificador único del pedido.
      */
     private Integer id;
+
     /**
      * Código único que identifica el pedido.
      */
     private String codigo_pedido;
+
     /**
      * Fecha en que se realizó el pedido.
      */
     private String fecha;
+
     /**
      * Identificador único del usuario que realizó el pedido.
      */
     private Integer usuarioId;
+
     /**
      * Total del pedido
      */
     private Integer total;
+
     /**
      * Lista de ítems que componen el pedido.
      */

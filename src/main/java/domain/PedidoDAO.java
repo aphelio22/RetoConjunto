@@ -8,6 +8,7 @@ import java.util.ArrayList;
  * La interfaz PedidoDAO define los métodos que deben implementarse para acceder a los datos de los pedidos en el sistema.
  */
 public interface PedidoDAO {
+
     /**
      * Recupera todos los pedidos asociados a un usuario específico.
      *

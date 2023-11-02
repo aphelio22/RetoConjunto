@@ -8,6 +8,7 @@ import java.util.ArrayList;
  * La interfaz ItemDAO define los métodos que deben implementarse para acceder a los datos de los elementos (Item) en el sistema.
  */
 public interface ItemDAO {
+
     /**
      * Recupera todos los elementos (Items) relacionados con un pedido específico.
      *

@@ -21,12 +21,14 @@ import java.util.ResourceBundle;
  * La clase LoginController controla la lógica de la ventana de inicio de sesión.
  */
 public class LoginController implements Initializable {
+
     /**
      * TextField donde el usuario introducirá su respectivo nombre
      * de usuario.
      */
     @FXML
     public TextField userField;
+
     /**
      * PasswordField en el que el usuario introducirá su respectiva contraseña.
      */
@@ -64,7 +66,7 @@ public class LoginController implements Initializable {
             alert.setHeaderText("Usuario Inexistente");
             alert.setContentText("No se ha encontrado al usuario.");
             alert.showAndWait();
-            throw new RuntimeException(e);
+            System.out.println("El usuario no existe.");
         } catch (ContrasenhaIncorrecta e) {
             // Muestra una alerta en caso de contraseña incorrecta.
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -72,7 +74,7 @@ public class LoginController implements Initializable {
             alert.setHeaderText("Contraseña incorrecta");
             alert.setContentText("La contraseña introducida no es correcta.");
             alert.showAndWait();
-            throw new RuntimeException(e);
+            System.out.println("Contraseña incorrecta.");
         }
     }
 

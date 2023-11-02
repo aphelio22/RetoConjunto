@@ -14,10 +14,12 @@ import java.util.ArrayList;
  * relacionados con un usuario desde una base de datos.
  */
 public class PedidoDAOImp implements PedidoDAO {
+
     /**
      * Atributo con el que se establecerá la conexión a la base de datos.
      */
     private static Connection connection;
+
     /**
      *  Consulta SQL para cargar todos los pedidos relacionados con un usuario específico.
      */
@@ -62,7 +64,7 @@ public class PedidoDAOImp implements PedidoDAO {
                 pedido.setTotal(resultSet.getInt("total"));
 
                 //Carga los elementos (items) relacionados con el pedido.
-                pedido.getItems().addAll(itemDAOImp.loadAll(pedido.getCodigo_pedido()));
+                pedido.setItems(itemDAOImp.loadAll(pedido.getCodigo_pedido()));
 
                 //Establece el pedido actual en la sesión.
                 Sesion.setPedido(pedido);

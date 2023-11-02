@@ -12,10 +12,12 @@ import java.util.logging.Logger;
  * Esta clase proporciona una conexión a la base de datos a través de JDBC.
  */
 public class DBConnection {
+
     /**
      * Atributo con el que se establecerá la conexión a la base de datos.
      */
     private static Connection connection;
+
     /**
      * Sirve para registrar logs de información en el programa.
      */
@@ -35,7 +37,6 @@ public class DBConnection {
             //Se carga la configuración de la base de datos desde un archivo de propiedades.
             InputStream inputStream = DBConnection.class.getClassLoader().getResourceAsStream("bbdd.properties");
             properties.load(inputStream);
-            System.out.println("Configuración cargada");
             //Se construye la URL de conexión usando los valores del archivo de propiedades.
             url = "jdbc:mysql://" + properties.get("host") + ":" + properties.get("port") + "/" + properties.get("dbname");
             user = (String) properties.get("user");
@@ -48,7 +49,6 @@ public class DBConnection {
         try {
             //Se establece la conexión a la base de datos utilizando la URL, usuario y contraseña.
             connection = DriverManager.getConnection(url, user, pass);
-            System.out.println("Conexión exitosa");
         } catch (SQLException e) {
             // En caso de error durante la conexión se lanza una excepción de tiempo de ejecución.
             throw new RuntimeException(e);

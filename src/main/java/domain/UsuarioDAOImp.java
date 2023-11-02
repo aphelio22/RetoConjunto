@@ -71,7 +71,6 @@ public class UsuarioDAOImp implements UsuarioDAO {
             //En caso de error al cargar el usuario se lanza una excepción.
             throw new RuntimeException(e);
         }
-        System.out.println(usuario);
         return usuario;
     }
 }
