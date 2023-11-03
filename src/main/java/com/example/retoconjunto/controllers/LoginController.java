@@ -11,7 +11,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -35,8 +34,6 @@ public class LoginController implements Initializable {
      */
     @FXML
     private PasswordField passField;
-    @FXML
-    private Button btnLogin;
 
     /**
      * Maneja el evento de inicio de sesión cuando se presiona el botón de inicio de sesión.
