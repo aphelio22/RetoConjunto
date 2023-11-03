@@ -1,7 +1,8 @@
-package com.example.retoconjunto;
+package com.example.retoconjunto.controllers;
 
 import clase.Item;
 import clase.Sesion;
+import com.example.retoconjunto.HelloApplication;
 import domain.DBConnection;
 import domain.ItemDAOImp;
 import javafx.beans.property.SimpleStringProperty;

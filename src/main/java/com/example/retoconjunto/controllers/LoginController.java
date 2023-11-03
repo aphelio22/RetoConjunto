@@ -1,7 +1,8 @@
-package com.example.retoconjunto;
+package com.example.retoconjunto.controllers;
 
 import clase.Sesion;
 import clase.Usuario;
+import com.example.retoconjunto.HelloApplication;
 import domain.DBConnection;
 import domain.UsuarioDAOImp;
 import exception.ContrasenhaIncorrecta;

@@ -55,7 +55,7 @@ public class ItemDAOImp implements ItemDAO {
                 item.setId(resultSet.getInt("id"));
                 item.setCodigo_pedido(resultSet.getString("codigo_pedido"));
                 item.setCantidad(resultSet.getInt("cantidad"));
-                Integer productId = resultSet.getInt("product_id");
+                Integer productId = resultSet.getInt("producto");
 
                 //Se carga la información de cada producto relacionado con cada item.
                 ProductoDAOImp productoDAOImp = new ProductoDAOImp(DBConnection.getConnection());

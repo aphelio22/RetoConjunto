@@ -6,4 +6,6 @@ module com.example.retoconjunto {
 
     opens com.example.retoconjunto to javafx.fxml;
     exports com.example.retoconjunto;
+    exports com.example.retoconjunto.controllers;
+    opens com.example.retoconjunto.controllers to javafx.fxml;
 }
